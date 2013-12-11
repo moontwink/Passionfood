@@ -41,10 +41,10 @@
         </activity>
         <activity
             android:name="creativecreations.foodcreations.FoodTip">
-        </activity>   
+        </activity>
         <activity
             android:name="com.example.actionbartab.MainActivity">
-        </activity>     
+        </activity>             
     </application>
 
 </manifest>

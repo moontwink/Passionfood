@@ -6,15 +6,15 @@ public class Ingredients {
 
 	private int id;
     private String name;
-	private String disease;
+	private String amt;
     private String unit;
  
     public Ingredients(){}
  
-    public Ingredients(String name, String disease, String unit) {
+    public Ingredients(String name, String amt, String unit) {
         super();
         this.name = name;
-		this.disease = disease;
+		this.amt = amt;
         this.unit = unit;
     }
  
@@ -22,7 +22,7 @@ public class Ingredients {
  
     @Override
     public String toString() {
-        return "Ingredients [id=" + id + ", name=" + name + ", disease=" + disease + ", unit=" + unit
+        return "Ingredients [id=" + id + ", name=" + name + ", amt=" + amt + ", unit=" + unit
                 + "]";
     }
     
@@ -42,12 +42,12 @@ public class Ingredients {
 		this.name = name;
 	}
 
-	public String getDisease() {
-		return disease;
+	public String getAmt() {
+		return amt;
 	}
 
-	public void setDisease(String disease) {
-		this.disease = disease;
+	public void setAmt(String amt) {
+		this.amt = amt;
 	}
 
 	public String getUnit() {

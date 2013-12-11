@@ -62,39 +62,39 @@ public class JonDAO{
 				+ " = " + id, null);
 	}
 
-//	public List<Recipe> getAllRecipes() {
-//		List<Recipe> recipes = new ArrayList<Recipe>();
-//
-//		Cursor cursor = database.query(JonSQLiteHelper.TABLE_RECIPE,
-//				allColumns, null, null, null, null, null);
-//
-//		cursor.moveToFirst();
-//		while (!cursor.isAfterLast()) {
-//			Recipe recipe = cursorToRecipe(cursor);
-//			recipes.add(recipe);
-//			cursor.moveToNext();
-//		}
-//		// make sure to close the cursor
-//		cursor.close();
-//		return recipes;
-//	}
-	
 	public List<Recipe> getAllRecipes() {
 		List<Recipe> recipes = new ArrayList<Recipe>();
-		SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-		Cursor cur = db.rawQuery("SELECT * FROM recipes", null);
+		Cursor cursor = database.query(JonSQLiteHelper.TABLE_RECIPE,
+				allColumns, null, null, null, null, null);
 
-		cur.moveToFirst();
-		while (!cur.isAfterLast()) {
-			Recipe recipe = cursorToRecipe(cur);
+		cursor.moveToFirst();
+		while (!cursor.isAfterLast()) {
+			Recipe recipe = cursorToRecipe(cursor);
 			recipes.add(recipe);
-			cur.moveToNext();
+			cursor.moveToNext();
 		}
-
-		db.close();
+		// make sure to close the cursor
+		cursor.close();
 		return recipes;
 	}
+	
+//	public List<Recipe> getAllRecipes() {
+//		List<Recipe> recipes = new ArrayList<Recipe>();
+//		SQLiteDatabase db = dbHelper.getWritableDatabase();
+//
+//		Cursor cur = db.rawQuery("SELECT * FROM recipes", null);
+//
+//		cur.moveToFirst();
+//		while (!cur.isAfterLast()) {
+//			Recipe recipe = cursorToRecipe(cur);
+//			recipes.add(recipe);
+//			cur.moveToNext();
+//		}
+//
+//		db.close();
+//		return recipes;
+//	}
 
 	private Recipe cursorToRecipe(Cursor cursor) {
 		Recipe recipe = new Recipe();

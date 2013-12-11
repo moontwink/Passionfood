@@ -31,7 +31,7 @@ public class RecipeSpecific extends Activity{
 		rname.setText(recipe_name);
 		
 		String ingredients = recipe_ingr;
-		ingredients = ingredients.replaceAll(",", "\n-");
+		ingredients = ingredients.replaceAll("<", "\n-");
 		ringr.setText(ingredients);
 		
 		String procs = recipe_proc;
@@ -39,7 +39,7 @@ public class RecipeSpecific extends Activity{
 		System.out.println("numComa " + numofcomma);
 		
 		for(int i = 2; i < numofcomma+2 ; i++)
-		procs = procs.replaceFirst(",", "\n" +i +". ");
+		procs = procs.replaceFirst("<", "\n" +i +". ");
 		
 		rproc.setText("1. " + procs);
 	
